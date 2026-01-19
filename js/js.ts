@@ -11,7 +11,7 @@ console.log(user)
 
 export function averageAge() {
   const average = users.reduce((acc, user) => acc + user.age, 0) / users.length
-console.log(average)
+console.log(average.toFixed(2))
 }
 
 export function format() {
@@ -28,6 +28,7 @@ export async function fetchUsers() {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await response.json();
     users = data.filter(user => user.email.endsWith('.biz'));
+    console.log(users);
   } catch (err) {
     error = err;
     console.error("Fetch error:", error);

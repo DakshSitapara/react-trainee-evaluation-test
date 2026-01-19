@@ -68,7 +68,7 @@ export function TodoForm({id}: {id?: string}) {
     const [title, setTitle] = useState(todo ? todo.title : "")
     const [description, setDescription] = useState(todo ? todo.description : "")
     const [status, setStatus] = useState(todo ? todo.status : "todo")
-    const [eror, setError] = useState("")
+    const [error, setError] = useState("")
 
     const inputRef = useRef<HTMLInputElement>(null)
 
@@ -77,23 +77,32 @@ export function TodoForm({id}: {id?: string}) {
         e.preventDefault()
         try {
           if(id) {
+            if(title.trim() === "" || description.trim() === "") {
+              throw new Error("Title and description cannot be empty")
+            }
             updateTodo(id, title, description, status)
-          } else {
+          } else if(title.trim() !== "" && description.trim() !== "") {
             addTodo(title, description, status)
+          } else {
+            throw new Error("Title and description cannot be empty")
           }
-            setTitle("")
-            setDescription("")
-            setStatus("todo")
-          }catch (error) {
-            setError(error as string)
-          }finally {
+        }catch (error) {
+          setError(error as string)
+        }finally {
+          if(!id){
             window.location.reload()
+          }
         }
+    }
+
+    const handleDelete = (id: string) => {
+      deleteTodo(id)
+      window.location.reload()
     }
 
     return (
         <form onSubmit={handleSubmit}>
-          {eror && <p className="text-red-500">{eror}</p>}
+          {error && <p className="text-red-500">{error}</p>}
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
                     Title:
@@ -143,7 +152,7 @@ export function TodoForm({id}: {id?: string}) {
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 >{id ? "Update" : "Create"}</button>
                 {id && <button 
-                    onClick={() => deleteTodo(id)}
+                    onClick={() => handleDelete(id)}
                     className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                 >Delete</button>
                 }
