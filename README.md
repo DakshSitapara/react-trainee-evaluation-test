@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<!-- This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). -->
 
-## Getting Started
+## React Trainee Evaluation Test
 
-First, run the development server:
+# Purpose:
+This test is designed to evaluate whether you are ready to work on real-world React projects. It checks your understanding of JavaScript, React fundamentals, problem solving, debugging, and professional workflow.
+
+# Section 1 – JavaScript Fundamentals (30 Marks)
+
+1. Difference between == and ===
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+```
+2. What is a closure?
+
+```bash
+
+```
+3. What is destructuring?
+
+```bash
+
+```
+4. Difference between map and forEach
+
+```bash
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Section 2 – React Fundamentals (30 Marks)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Difference between props and state
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
 
-## Learn More
+```
+2.What is useEffect and when do you use it?
 
-To learn more about Next.js, take a look at the following resources:
+```bash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+3. Why does useEffect run twice in development sometimes?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
 
-## Deploy on Vercel
+```
+4. What is controlled vs uncontrolled input?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+
+# Section 3 – Real World Assignment (40 Marks)
+
+Build a Task Manager App
+
+Features : 
+
+```bash
+    Add a task (title, description, status)
+    Edit a task
+    Delete a task
+    Status: Todo / In Progress / Done
+    Filter tasks by status
+    Persist data in localStorage
+    Simple form validation
+    Clean UI (Tailwind or CSS)
+```
+
+Bonus (Optional) :
+
+```bash
+    Search tasks
+    Drag & drop
+    Dark mode
+```
+
+Technical Rules :
+```bash
+    Use React with Vite or Next.js
+    Use functional components only
+    No external state libraries
+    Handle errors and empty states
+```
+
+
